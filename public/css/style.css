@@ -1,0 +1,255 @@
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: none;
+}
+
+body {
+    max-width: 100%;
+    font-size: 13px;
+    color: #777;
+    font-family: sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background-image: url(../img/agua.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.login-form {
+    background: #fff;
+    margin: 100px 0 0 0;
+    padding: 50px 0 70px;
+}
+
+.login-form form {
+    padding: 0 30px 0 30px
+}
+
+.login-form h3 {
+    border-left: 3px #1390bc solid;
+}
+
+.wrimagecard {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: left;
+    position: relative;
+    background: #fff;
+    box-shadow: 12px 15px 20px 0px rgb(46 61 73 / 83%);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.wrimagecard .fa {
+    position: relative;
+    font-size: 50px;
+}
+
+.wrimagecard-topimage_header {
+    padding: 12px;
+}
+
+a.wrimagecard:hover,
+.wrimagecard-topimage:hover {
+    box-shadow: 2px 4px 8px 0px rgba(46, 61, 73, 0.2);
+}
+
+.wrimagecard-topimage a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.wrimagecard-topimage_title {
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.wrimagecard-topimage a {
+    border-bottom: none;
+    text-decoration: none;
+    color: #525c65;
+    transition: color 0.3s ease;
+}
+
+.wrimagecard h4 {
+    font-size: 17px;
+}
+
+.wrimagecard img {
+    max-width: 56px;
+}
+
+.top-menu img {
+    max-width: 130px
+}
+
+.cabecera {
+    margin-top: 30px;
+    padding: 2px 40px;
+}
+
+.modal-content .modal-header {
+    padding: 16px 25px 15px 22px;
+    border-bottom: 0;
+    color: #fff;
+    background: #8acfc8;
+}
+
+
+/*============================= Tablas  =======================*/
+
+.recibo {
+    background: #f3f3f3;
+}
+
+.cabecera-1 {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.footer-recibo {
+    border-bottom: 4px #3b9eb396 solid;
+}
+
+.factura-indidual {
+    border: 1px #777 dotted;
+}
+
+span.text-danger.corte-recibo {
+    /* transform: rotate(54deg) !important; */
+    position: relative;
+    /* left: 400px; */
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform-origin: 48% 42%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    /* transform-origin: 50% 50%; */
+    font-size: 72px;
+    /* width: 250px; */
+    position: absolute;
+    top: 337px;
+    right: 71px;
+    -webkit-transform: rotate(-52deg);
+    display: block;
+    color: #ff000045 !important;
+}
+
+.tabla {
+    padding: 2px 5px;
+}
+
+.img-cabecera {
+    position: absolute;
+    /* width: 100%; */
+    /* margin: 16px 0 0 -87px; */
+    z-index: 0;
+    left: 0;
+    max-width: 94%;
+    margin: auto;
+    display: block;
+    right: 0;
+}
+
+table tr span {
+    /* position: relative; */
+    /* z-index: 9999 !IMPORTANT; */
+    /* position: inherit; */
+    z-index: 9999 !important;
+    position: relative;
+}
+
+.logo-recibo {
+    position: relative;
+}
+
+.corte {
+    border-top: 2px #777 dashed;
+    /* height: 1px; */
+    padding: 10;
+    margin: 35px 0 35px 0;
+    background: #fff !important;
+}
+
+.border-hidden td {
+    border: none !important;
+    text-align: end;
+}
+
+
+/* thead.cabecera-1 {
+    background: #f3f3f3;
+} */
+
+tr.border-hidden {
+    text-align: end;
+}
+
+@media print {
+    @page {
+        margin-bottom: 0;
+    }
+    .salto-pagina {
+        display: block;
+        page-break-after: always;
+    }
+}
+
+.salto-pagina {
+    display: block;
+    page-break-after: always;
+}
+
+.frase {
+    padding: 10px
+}
+
+.content-recibo {
+    height: 1548px;
+}
+
+#cabecera-img {
+    background-color: black;
+}
+
+.informacion-usuario-img {
+    background: linear-gradient(20deg, #e1e3e39e 35%, #4783e5);
+}
+
+.table1 {
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: .75rem;
+}
+
+.table1 td,
+.table1 th {
+    padding-top: .75rem;
+    vertical-align: top;
+    border-top: 1px solid rgba(0, 0, 0, .06);
+}
+
+.buscar {
+    color: #212529 !important;
+    background-color: #cede2c !important;
+    border-color: #cede2c !important;
+}
+
+
+/* =======================================home=================================================== */
+
+
+/* .home {
+    background-image: url(../img/agua.jpg);
+    background-repeat: no-repeat;
+} */
