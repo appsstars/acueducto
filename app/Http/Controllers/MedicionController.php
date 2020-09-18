@@ -578,17 +578,15 @@ class MedicionController extends Controller
 //pero como ya se simplifico a un attr en la db yo creeria que esta parte se suspende un poco cual
 ////
 //dd($facturacion);m
+         
+            
+
+
+           
 
 
 
-
-            if(count($facturacion)==0){
-               // $dato['lectura'] = $medidor[0]['lectura_inicial'];
-            }
-
-
-
-            if(count($facturacion)>=1){
+            if(!empty($facturacion)){
                 //facturacion actual
                 $dato['consumo'] = $facturacion->consumo;
                 $dato['lectura_actual'] = $facturacion->lectura;
