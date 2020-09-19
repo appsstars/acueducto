@@ -36,7 +36,7 @@
 <body>
     <div id="app">
       <div class="container" style="padding: 30px 30px 0 30px">
-        <div class="row" style="margin-top: 50px;border: 1px #000 dotted" id="cabecera">
+        <div class="row super-cabecera"  id="cabecera">
           <div class="col-md-2">
               <div class="top-menu">
                 <img src="{{url('img/logo.png')}}">
@@ -53,29 +53,15 @@
       </div>
         <header>
             <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: 10px">
-                  <a class="navbar-brand" href="/app"><i class="fa fa-home"></i> PIJAOS</a>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
+                <nav class="navbar " style="margin-top: 10px">
+                  <a class="navbar-brand" href="/produccion/acueducto/public/app" style="margin:auto"><i class="fa fa-home" style="font-size: 40px !important;"></i></a>
+                  <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                     <i class="fa fa-sign-out" style="font-size: 35px;"></i>
+                  </a>
 
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-
-                      <li class="nav-item">
-                        <a class="nav-link" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                SALIR
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                                </form>
-                      </li>
-
-                    </ul>
-                  </div>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                  </form>                
                 </nav>
             </div>
 

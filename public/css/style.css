@@ -13,7 +13,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     min-height: 100vh;
-    background-image: url(../img/agua.jpg);
+    background-image: url(../img/gota.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -99,6 +99,17 @@ a.wrimagecard:hover,
     border-bottom: 0;
     color: #fff;
     background: #8acfc8;
+}
+
+.super-cabecera {
+    margin-top: 50px;
+    border: 1px #000 dotted;
+    /* background: linear-gradient(20deg, #87ccad, #51b294, #448193); */
+    background: linear-gradient(20deg, #7dbd00, #dcf600, #87ccad);
+}
+
+.navbar {
+    background: linear-gradient(15deg, #d4ecec 50%, #fefefe 50%);
 }
 
 
