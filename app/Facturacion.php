@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Facturacion extends Model
 {
     protected $table = 'facturacion';
-    protected $fillable = ['id_cliente','id_factura','id_medidor','id_credito','id_acuerdo','id_precio','fecha_facturacion','fecha_limite'];//metro adicional
+    protected $fillable = ['id_cliente','id_factura','id_medidor','id_credito','id_acuerdo','id_precio','fecha_facturacion','fecha_limite','id_punto'];//metro adicional
 
     public function clientes()
     {

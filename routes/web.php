@@ -53,6 +53,10 @@ Route::group(['prefix'=>'app'],function(){
     Route::get('update','AcuerdoController@index');
 });
 
+Route::group(['prefix'=>'update'],function(){
+    Route::get('punto-agua-facturacion','UpdateController@add_punto_agua_facturacion');
+});
+
 
 Route::get('update','AppController@update');
 

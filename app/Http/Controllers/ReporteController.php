@@ -557,6 +557,7 @@ class ReporteController extends Controller
                 if(!empty($_REQUEST['fecha'])){
 
                      $fecha = $_REQUEST['fecha'];
+                     $data = [];
 
                      $facturacion_total = DB::table('facturacion as fn')
                       ->join('factura as f','f.id','=','fn.id_factura')
@@ -573,7 +574,39 @@ class ReporteController extends Controller
                           'c.*',
                           'p.*',
                           'n.*'
-                      )->groupBy('c.id')->get();
+                      )->get();
+                   /*   $facturacion_total = DB::table('facturacion as fn')
+                      ->join('factura as f','f.id','=','fn.id_factura')
+                      ->join('cliente as c','c.id','=','fn.id_cliente')
+                      ->join('precio as p','p.id','=','fn.id_precio')
+                      ->where('f.estado','=','2')
+                      ->where('f.fecha_pago','=',$fecha)
+                      ->select(
+                          'fn.id as id_facturacion',
+                          'fn.*',
+                          'f.*',
+                          'p.*'
+                      )->get();
+
+                      foreach ($facturacion_total as $key => $v) {//id_cliente,nombre,prim_ap, segun_ape,id_ni
+                        //datos de la factura
+                          $objeto = array(
+                            'periodo'=>$v->periodo,
+                            'id_factura'=>$v->id_factura,
+                            'id_medidor'=>$v->id_medidor,
+                            'ano'=>$v->ano,
+                            'precio_metro'=>$v->precio_metro
+                          );
+
+
+                          dd($facturacion_total);
+
+
+                          array_push($data, $objeto);
+                      }
+
+                      dd($data);*/
+                      
                       
 
 
@@ -584,8 +617,8 @@ class ReporteController extends Controller
                         ->join('credito as c','c.id_punto_agua','=','pt.id')
                         ->join('facturacion as fn','fn.id_medidor','=','pt.id_medidor')
                         //->where('pt.id_medidor','=',$id_medidor)
-                        ->where('c.updated_at','LIKE','%'.$fecha.'%')
-                        ->select('fn.id as id_facturacion','c.id as id_credito','c.*','fn.*','pt.id_medidor as medidor')->groupBy('c.id')->get();
+                        ->where('c.fecha_pago','LIKE','%'.$fecha.'%')
+                        ->select('fn.id as id_facturacion','c.id as id_credito','c.*','fn.*','pt.id_medidor as medidor')->get();
 
                       
                         
