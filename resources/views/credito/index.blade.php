@@ -13,14 +13,14 @@
                                         <form action="">
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="{{ url('app') }}" class="btn btn-success btn-block btn-outline-dark">Volver</a>
+                                                <a href="{{url('app')}}" style="text-decoration: none;"><i class="fas fa-angle-double-left icon-return"> </i><h5 class="atras">atras</h5></a>
                                                 </div>
                                                 <div class="col-md-4"></div>
                                                 <div class="col-md-4">
                                                     @include('filtro.index')
                                                 </div>
                                                 <div class="col-md-2">
-                                                    <button class="btn btn-primary btn-outline-primary btn-block">Buscar</button>
+                                                <button class="buscar btn btn-primary btn-outline-primary btn-block">Buscar</button>
                                                 </div>
                                             </div>
 

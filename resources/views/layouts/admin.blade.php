@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/bootstrap-material-design.min.css')}}">
+    <link rel="stylesheet" href="{{asset('fonts/fontawesome-5.14.0/css/all.css')}}">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">

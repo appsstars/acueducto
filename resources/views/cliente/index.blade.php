@@ -11,17 +11,18 @@
                                 <form action="">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <a href="{{ url('app') }}" class="btn btn-success btn-block btn-outline-dark btn-sm">Volver</a>
+                                                <!-- <a href="{{ url('app') }}" class="btn btn-success btn-block btn-outline-dark btn-sm">Volver</a> -->
+                                                <a href="{{url('app')}}" style="text-decoration: none;"><i class="fas fa-angle-double-left icon-return"> </i><h5 class="atras">atras</h5></a>
                                             </div>
                                             <div class="col-sm-12 col-md-2 col-lg-2">
-                                                <a href="#form-create" data-toggle="modal" class="btn btn-success btn-block btn-outline-success btn-sm">Nuevo</a>
+                                                <a href="#form-create" data-toggle="modal" ><i class="fa fa-user-plus icon-return" aria-hidden="true"></i></a>
                                             </div>
                                             <div class="col-2"></div>
                                             <div class="col-sm-5 col-md-4 col-lg-4" >
                                                 @include('filtro.index')
                                             </div>
                                             <div class="col-sm-5 col-md-2 col-lg-2">
-                                                <button class="btn btn-primary btn-outline-primary btn-block btn-sm">Buscar</button>
+                                            <button class="buscar btn btn-primary btn-outline-primary btn-block">Buscar</button>
                                             </div>
                                             <div class="clearfix"></div>
 

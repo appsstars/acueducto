@@ -264,3 +264,22 @@ tr.border-hidden {
     background-image: url(../img/agua.jpg);
     background-repeat: no-repeat;
 } */
+
+.icon-home {
+    font-size: 70px;
+    color: #009688;
+}
+
+.icon-return {
+    font-size: 50px;
+    color: #009688;
+}
+
+.atras {
+    font-size: 20px;
+    /* text-align: center; */
+    transform: translate(50px, -35px);
+}
+
+
+/* <a href="{{url('app')}}" ><i class="fas fa-angle-double-left icon-return"> </i><h5 class="atras">atras</h5></a> */
