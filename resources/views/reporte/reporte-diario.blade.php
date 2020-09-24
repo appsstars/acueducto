@@ -155,9 +155,9 @@
 									  		echo number_format($subsidio_pagar_cargo,0);
 									   ?> </td>
 									   <td>
-									   	<?php $otros_cobros = 100; ?>
+									   	<?php $otros_cobros = 0; ?>
                                                @foreach($creditos as $c)
-                                                <!--   @if($f->id_medidor==$c->medidor)
+                                                  @if($f->id_medidor==$c->medidor)
 
 													<?php 
 
@@ -171,7 +171,7 @@
 													 ?>
 													
 									   			@endif
-									   		-->
+									   		
 									   		@endforeach
 											<?php
 												$otros_cobros_t = $otros_cobros_t + $otros_cobros;
