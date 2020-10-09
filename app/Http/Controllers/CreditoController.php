@@ -26,33 +26,56 @@ class CreditoController extends Controller
       //dd($creditos);
  
       if(!empty($_REQUEST['buscar'])){
-          $creditos = DB::table('medidor as m')
-          ->join('punto_agua as pt','pt.id_medidor','=','m.id')
-          ->join('cliente as c','c.id','pt.id_cliente')
-          ->where('m.id','LIKE','%'.$_REQUEST['buscar'].'%')
-          ->select('m.id as id_medidor','c.nombre','c.primer_apellido','c.segundo_apellido','c.documento','pt.zona','c.telefono','pt.id as id_punto')->get();
-          //dd($creditos);
+          // $creditos = DB::table('medidor as m')
+          // ->join('punto_agua as pt','pt.id_medidor','=','m.id')
+          // ->join('cliente as c','c.id','pt.id_cliente')
+          // ->where('m.id','LIKE','%'.$_REQUEST['buscar'].'%')
+          // ->select('m.id as id_medidor','c.nombre','c.primer_apellido','c.segundo_apellido','c.documento','pt.zona','c.telefono','pt.id as id_punto')->get();
+
+          $creditos = DB::table('credito as cr')
+            ->join('punto_agua as pt','pt.id','=','cr.id_punto_agua')
+            ->join('cliente as c','c.id','=','pt.id_cliente')
+            ->join('medidor as m','m.id','=','pt.id_medidor')
+            ->where('m.id','LIKE','%'.$_REQUEST['buscar'].'%')
+            ->where('cr.estado','=','1')
+            ->select('m.id as id_medidor','c.nombre','c.primer_apellido','c.segundo_apellido','c.documento','pt.zona','c.telefono','pt.id as id_punto')->get();
 
           }else{
-             $creditos = DB::table('medidor as m')
-               ->join('punto_agua as pt','pt.id_medidor','m.id')  ///
-              ->join('cliente as c','c.id','pt.id_cliente')
-              ->select('m.id as id_medidor','c.nombre','c.primer_apellido','c.segundo_apellido','c.documento','pt.zona','c.telefono','pt.id as id_punto')->get();
+            //  $creditos = DB::table('medidor as m')
+            //    ->join('punto_agua as pt','pt.id_medidor','m.id')  ///
+            //   ->join('cliente as c','c.id','pt.id_cliente')
+            //   ->select('m.id as id_medidor','c.nombre','c.primer_apellido','c.segundo_apellido','c.documento','pt.zona','c.telefono','pt.id as id_punto')->get();
+
+            $creditos = DB::table('credito as cr')
+            ->join('punto_agua as pt','pt.id','=','cr.id_punto_agua')
+            ->join('cliente as c','c.id','=','pt.id_cliente')
+            ->join('medidor as m','m.id','=','pt.id_medidor')
+            ->where('cr.estado','=','1')
+            ->select('m.id as id_medidor','c.nombre','c.primer_apellido','c.segundo_apellido','c.documento','pt.zona','c.telefono','pt.id as id_punto')->get();
           }
 
-
+          // dd($creditos);
         return view('credito.index',compact("creditos"));
     }
 
     public function lista($id)
     {
-        $punto = PuntoAgua::find($id);
-        $credito = DB::table('credito as cr')
-        ->join('cliente as cl','cl.id','=',$punto->id_cliente)
-        ->join('nivel as n','n.id','=','cl.id_nivel')
-        ->where('cr.id_punto_agua','=',$punto->id)
-          ->select('cr.*','cr.id as id_credito','n.tipo','cl.nombre','cl.primer_apellido','cl.segundo_apellido','cl.documento','cl.telefono')->get();
-                  // dd($credito);
+        // $punto = PuntoAgua::find($id);
+        // $credito = DB::table('credito as cr')
+        // ->join('cliente as cl','cl.id','=',$punto->id_cliente)
+        // ->join('nivel as n','n.id','=','cl.id_nivel')
+        // ->where('cr.id_punto_agua','=',$punto->id)
+        //   ->select('cr.*','cr.id as id_credito','n.tipo','cl.nombre','cl.primer_apellido','cl.segundo_apellido','cl.documento','cl.telefono')->get();
+                  //
+                  // dd($id);
+          $credito = DB::table('punto_agua as pt')
+          ->join('credito as cr','cr.id_punto_agua','=','pt.id')
+          ->join('cliente as cl','cl.id','=','pt.id_cliente')
+          ->join('nivel as n','n.id','=','cl.id_nivel')
+         ->where('pt.id','=',$id)
+         ->where('cr.estado','=','1')
+          ->select('cr.*','cr.id as id_credito','n.tipo','cl.nombre','cl.primer_apellido','cl.segundo_apellido','cl.documento','cl.telefono','pt.id_medidor')->get();
+            // dd($credito);
 
          return view('credito.detalles',compact('credito'));
 

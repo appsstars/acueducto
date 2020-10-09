@@ -49,7 +49,7 @@
 					<thead>
 
 						<tr>
-                            <td>#</td>
+                            <td>Cod_Medidor</td>
 							<td>Nombre</td>
 							<td>Primer Apellido</td>
                             <td>Segundo Apellido</td>
@@ -66,7 +66,7 @@
                         @foreach ($credito as $credito)
                         <tr>
 
-                            <td>{{$credito->id_credito}}</td>
+                            <td>{{$credito->id_medidor}}</td>
                             <td>{{$credito->nombre}}</td>
 							<td>{{$credito->primer_apellido}}</td>
 							<td>{{$credito->segundo_apellido}}</td>
