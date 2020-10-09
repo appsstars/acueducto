@@ -575,6 +575,8 @@ class ReporteController extends Controller
                           'p.*',
                           'n.*'
                       )->get();
+
+
                    /*   $facturacion_total = DB::table('facturacion as fn')
                       ->join('factura as f','f.id','=','fn.id_factura')
                       ->join('cliente as c','c.id','=','fn.id_cliente')
@@ -597,14 +599,9 @@ class ReporteController extends Controller
                             'ano'=>$v->ano,
                             'precio_metro'=>$v->precio_metro
                           );
-
-
                           dd($facturacion_total);
-
-
                           array_push($data, $objeto);
                       }
-
                       dd($data);*/
                       
                       
