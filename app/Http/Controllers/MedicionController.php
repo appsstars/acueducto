@@ -231,13 +231,13 @@ class MedicionController extends Controller
 
 
 
-            if(count($facturacion)==0){
+        /*    if(count($facturacion)==0){
                // $dato['lectura'] = $medidor[0]['lectura_inicial'];
-            }
+            }*/
 
 
 
-            if(count($facturacion)>=1){
+            if(!empty($facturacion)){
                 //facturacion actual
                 $dato['consumo'] = $facturacion->consumo;
                 $dato['lectura_actual'] = $facturacion->lectura;
@@ -1274,7 +1274,11 @@ class MedicionController extends Controller
             ->where('c.id','=',$id_cliente)
             ->select('*')->get();
 
-            $precio = Precio::where('estado','2')->select('*')->get();
+
+
+            $precio = Precio::where('estado','1')->select('*')->get();
+
+  
             $precio_metro = $precio[0]['precio_metro'];
             $cargo_fijo =  $precio[0]['cargo_fijo'];
 
