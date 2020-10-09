@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/bootstrap-material-design.min.css')}}">
+    <link rel="stylesheet" href="{{asset('fonts/fontawesome-5.14.0/css/all.css')}}">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -54,7 +55,7 @@
         <header>
             <div class="container">
                 <nav class="navbar " style="margin-top: 10px">
-                  <a class="navbar-brand" href="/produccion/acueducto/public/app" style="margin:auto"><i class="fa fa-home" style="font-size: 40px !important;"></i></a>
+                  <a class="navbar-brand" href="app" style="margin:auto"><i class="fa fa-home" style="font-size: 40px !important;"></i></a>
                   <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                      <i class="fa fa-sign-out" style="font-size: 35px;"></i>
                   </a>

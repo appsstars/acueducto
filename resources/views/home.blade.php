@@ -26,7 +26,8 @@
               <a href="{{url('app/pago/create')}}">
               <div class="wrimagecard-topimage_header" style="background-color: rgba(22, 160, 133, 0.1)">
                 <center>
-                 <img src="{{url('img/iconos/icono-pagos.png')}}" alt="">
+                 <!-- <img src="{{url('img/iconos/icono-pagos.png')}}" alt=""> -->
+                 <i class="fab fa-amazon-pay icon-home"></i>
                </center>
               </div>
               <div class="wrimagecard-topimage_title">
@@ -44,7 +45,8 @@
               <a href="{{url('app/medicion')}}">
               <div class="wrimagecard-topimage_header" style="background-color: rgba(22, 160, 133, 0.1)">
                 <center>
-                  <img src="{{url('img/iconos/icono-ver-mediciones.png')}}" alt="">
+                  <!-- <img src="{{url('img/iconos/icono-ver-mediciones.png')}}" alt=""> -->
+                  <i class="fas fa-file-invoice-dollar icon-home"></i>
                 </center>
               </div>
               <div class="wrimagecard-topimage_title">
@@ -60,7 +62,8 @@
               <a href="{{url('app/medicion/create')}}">
               <div class="wrimagecard-topimage_header" style="background-color: rgba(22, 160, 133, 0.1)">
                 <center>
-                 <img src="{{url('img/iconos/icono-agregar-mediciones.png')}}" alt="">
+                 <!-- <img src="{{url('img/iconos/icono-agregar-mediciones.png')}}" alt=""> -->
+                 <i class="fab fa-creative-commons-share icon-home"></i>
                </center>
               </div>
               <div class="wrimagecard-topimage_title">
@@ -80,7 +83,8 @@
               <a href="{{ url('app/clientes') }}">
               <div class="wrimagecard-topimage_header" style="background-color: rgba(22, 160, 133, 0.1)">
                 <center>
-                  <img src="{{url('img/iconos/icono-clientes.png')}}" alt="">
+                  <!-- <img src="{{url('img/iconos/icono-clientes.png')}}" alt=""> -->
+                  <i class="fas fa-users icon-home"></i>
                 </center>
               </div>
               <div class="wrimagecard-topimage_title">
@@ -97,7 +101,8 @@
               <a href="{{ url('app/credito') }}">
               <div class="wrimagecard-topimage_header" style="background-color: rgba(22, 160, 133, 0.1)">
                 <center>
-                  <img src="{{url('img/iconos/icono-reportes.png')}}" alt="">
+                  <!-- <img src="{{url('img/iconos/icono-reportes.png')}}" alt=""> -->
+                  <i class="fas fa-hand-holding-usd icon-home"></i>
                 </center>
               </div>
               <div class="wrimagecard-topimage_title">
@@ -114,7 +119,8 @@
               <a href="{{url('app/reportes')}}">
               <div class="wrimagecard-topimage_header" style="background-color: rgba(22, 160, 133, 0.1)">
                 <center>
-                  <img src="{{url('img/iconos/icono-reportes.png')}}" alt="">
+                  <!-- <img src="{{url('img/iconos/icono-reportes.png')}}" alt=""> -->
+                  <i class="fas fa-clipboard-list icon-home"></i>
                 </center>
               </div>
               <div class="wrimagecard-topimage_title">

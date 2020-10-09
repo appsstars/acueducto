@@ -155,23 +155,23 @@
 									  		echo number_format($subsidio_pagar_cargo,0);
 									   ?> </td>
 									   <td>
-									   	<?php $otros_cobros = 100; ?>
+									   	<?php $otros_cobros = 0; ?>
                                                @foreach($creditos as $c)
-                                                <!--   @if($f->id_medidor==$c->medidor)
+                                                  @if($f->id_medidor==$c->medidor)
 
 													<?php 
 
 														$otros_cobros = $c->valor - $c->valor_cuota;
 														if($otros_cobros==0){
-															//$otros_cobros = $c->valor;
+															$otros_cobros = $c->valor;
 														}else{
-															//$otros_cobros = $c->valor - $c->valor_cuota;
+															$otros_cobros = $c->valor - $c->valor_cuota;
 														}
 
 													 ?>
 													
 									   			@endif
-									   		-->
+									   		
 									   		@endforeach
 											<?php
 												$otros_cobros_t = $otros_cobros_t + $otros_cobros;
@@ -180,7 +180,8 @@
 									   </td>
 									   <td>
 									   		<?php
-									   			$total_factura =  $otros_cobros + $total_consumo +  $subsidio_pagar_cargo;
+									   			//$total_factura =  $otros_cobros + $total_consumo +  $subsidio_pagar_cargo;
+									   		$total_factura = $f->total_pagar;
 									   			$total_factura_t = $total_factura_t + $total_factura;
 									   			echo $total_factura;
 

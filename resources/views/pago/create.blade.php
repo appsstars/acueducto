@@ -6,7 +6,7 @@
 		<form action="">
 			<div class="row">
 				<div class="col-md-3">
-					  <a href="{{url('app')}}" class="btn btn-outline-info">Volver</a>
+				<a href="{{url('app')}}" style="text-decoration: none;"><i class="fas fa-angle-double-left icon-return"> </i><h5 class="atras">atras</h5></a>
 				</div>
 				<div class="col-md-6">
 					@include('filtro.index')

@@ -21,9 +21,10 @@ body {
 }
 
 .login-form {
-    background: #fff;
+    background: #ffffffb0;
     margin: 100px 0 0 0;
     padding: 50px 0 70px;
+    box-shadow: 1px 2px 11px 0px #00000040;
 }
 
 .login-form form {
@@ -40,7 +41,7 @@ body {
     text-align: left;
     position: relative;
     background: #fff;
-    box-shadow: 12px 15px 20px 0px rgb(46 61 73 / 83%);
+    box-shadow: 12px 15px 20px 0px rgb(46 61 73 / 22%);
     border-radius: 4px;
     transition: all 0.3s ease;
 }
@@ -105,7 +106,7 @@ a.wrimagecard:hover,
     margin-top: 50px;
     border: 1px #000 dotted;
     /* background: linear-gradient(20deg, #87ccad, #51b294, #448193); */
-    background: linear-gradient(20deg, #7dbd00, #dcf600, #87ccad);
+    background: linear-gradient(20deg, #96ffef, #ffffff, #21ccf3);
 }
 
 .navbar {
@@ -264,3 +265,22 @@ tr.border-hidden {
     background-image: url(../img/agua.jpg);
     background-repeat: no-repeat;
 } */
+
+.icon-home {
+    font-size: 70px;
+    color: #009688;
+}
+
+.icon-return {
+    font-size: 50px;
+    color: #009688;
+}
+
+.atras {
+    font-size: 20px;
+    /* text-align: center; */
+    transform: translate(50px, -35px);
+}
+
+
+/* <a href="{{url('app')}}" ><i class="fas fa-angle-double-left icon-return"> </i><h5 class="atras">atras</h5></a> */

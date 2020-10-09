@@ -5,7 +5,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-2">
-                    <a href="{{url('app')}}" class="btn btn-outline-info btn-sm btn-block">Volver</a>
+                    <!-- <a href="{{url('app')}}" class="btn btn-outline-info btn-sm btn-block">Volver</a> -->
+                    <a href="{{url('app')}}" style="text-decoration: none;"><i class="fas fa-angle-double-left icon-return"> </i><h5 class="atras">atras</h5></a>
                 </div>
                 <div class="col-md-8"></div>
                 <div class="col-md-2">

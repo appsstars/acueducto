@@ -614,8 +614,10 @@ class ReporteController extends Controller
                         ->join('credito as c','c.id_punto_agua','=','pt.id')
                         ->join('facturacion as fn','fn.id_medidor','=','pt.id_medidor')
                         //->where('pt.id_medidor','=',$id_medidor)
-                        ->where('c.fecha_pago','LIKE','%'.$fecha.'%')
+                        ->where('c.fecha_pago','=',$fecha)
                         ->select('fn.id as id_facturacion','c.id as id_credito','c.*','fn.*','pt.id_medidor as medidor')->get();
+
+                        //dd($creditos);
 
                       
                         
