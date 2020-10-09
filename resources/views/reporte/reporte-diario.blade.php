@@ -163,9 +163,9 @@
 
 														$otros_cobros = $c->valor - $c->valor_cuota;
 														if($otros_cobros==0){
-															//$otros_cobros = $c->valor;
+															$otros_cobros = $c->valor;
 														}else{
-															//$otros_cobros = $c->valor - $c->valor_cuota;
+															$otros_cobros = $c->valor - $c->valor_cuota;
 														}
 
 													 ?>
@@ -180,7 +180,8 @@
 									   </td>
 									   <td>
 									   		<?php
-									   			$total_factura =  $otros_cobros + $total_consumo +  $subsidio_pagar_cargo;
+									   			//$total_factura =  $otros_cobros + $total_consumo +  $subsidio_pagar_cargo;
+									   		$total_factura = $f->total_pagar;
 									   			$total_factura_t = $total_factura_t + $total_factura;
 									   			echo $total_factura;
 
