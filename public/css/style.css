@@ -284,3 +284,7 @@ tr.border-hidden {
 
 
 /* <a href="{{url('app')}}" ><i class="fas fa-angle-double-left icon-return"> </i><h5 class="atras">atras</h5></a> */
+
+main.py-4 {
+    background: #fff;
+}

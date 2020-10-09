@@ -85,14 +85,17 @@ class PuntoAguaController extends Controller
         $id_nivel = $cliente_ver->id_nivel;
         //dd($id_cliente);
 
+
+
         $puntos = DB::table('punto_agua as pt')
                 ->join('medidor as md','md.id','=','pt.id_medidor')
-                ->join('nivel as n','n.id','=',$id_nivel)
+                ->join('cliente as c','c.id','=','pt.id_cliente')
+                ->join('nivel as n','n.id','=','c.id_nivel')
+                ->where('c.id_nivel','=',$id_nivel)
                 ->where('pt.id_cliente','=',$id_cliente)
                 ->where('pt.estado','=','1')
                 ->select('pt.*','md.marca','md.serial','md.id as id_medidor','n.tipo')->get();
 
-       // dd($puntos);
      //  $puntos_disponibles =
      $medidores_disponibles  = DB::table('medidor as m')
         ->where('m.estado','2')->select('*')->get();
