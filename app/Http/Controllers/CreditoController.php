@@ -66,8 +66,7 @@ class CreditoController extends Controller
         // ->join('nivel as n','n.id','=','cl.id_nivel')
         // ->where('cr.id_punto_agua','=',$punto->id)
         //   ->select('cr.*','cr.id as id_credito','n.tipo','cl.nombre','cl.primer_apellido','cl.segundo_apellido','cl.documento','cl.telefono')->get();
-                  //
-                  // dd($id);
+        
           $credito = DB::table('punto_agua as pt')
           ->join('credito as cr','cr.id_punto_agua','=','pt.id')
           ->join('cliente as cl','cl.id','=','pt.id_cliente')
@@ -75,7 +74,7 @@ class CreditoController extends Controller
          ->where('pt.id','=',$id)
          ->where('cr.estado','=','1')
           ->select('cr.*','cr.id as id_credito','n.tipo','cl.nombre','cl.primer_apellido','cl.segundo_apellido','cl.documento','cl.telefono','pt.id_medidor')->get();
-            // dd($credito);
+        
 
          return view('credito.detalles',compact('credito'));
 
