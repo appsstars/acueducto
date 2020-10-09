@@ -106,7 +106,7 @@ a.wrimagecard:hover,
     margin-top: 50px;
     border: 1px #000 dotted;
     /* background: linear-gradient(20deg, #87ccad, #51b294, #448193); */
-    background: linear-gradient(20deg, #96ffef, #ffffff, #21ccf3);
+        background: linear-gradient(20deg, #95d3ce, #ffffff, #009688);
 }
 
 .navbar {
