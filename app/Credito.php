@@ -14,6 +14,10 @@ class Credito extends Model
     {
         return $this->belongsTo('App\Facturacion');
     }
+    public function pagos()
+    {
+        return $this->belongsTo('App\PagoCredito');
+    }
     public function puntos()
     {
         return $this->hasMany('App\PuntoAgua');

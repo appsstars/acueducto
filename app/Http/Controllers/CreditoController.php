@@ -11,6 +11,7 @@ use App\PuntoAgua;
 use PhpParser\Node\Expr\New_;
 use Session;
 use App\Facturacion;
+use App\PagoCredito;
 
 class CreditoController extends Controller
 {
@@ -75,7 +76,7 @@ class CreditoController extends Controller
          ->where('cr.estado','=','1')
           ->select('cr.*','cr.id as id_credito','n.tipo','cl.nombre','cl.primer_apellido','cl.segundo_apellido','cl.documento','cl.telefono','pt.id_medidor')->get();
         
-
+         //dd($credito);
          return view('credito.detalles',compact('credito'));
 
     }
@@ -265,13 +266,15 @@ class CreditoController extends Controller
      */
     public function update(Request $request, $credito)
     {
+        date_default_timezone_set('America/Bogota');
+      //dd($request->valor_abono);
+      $fecha= date('yy-m-d');
+      //dd($fecha);
         $credito = Credito::find($credito);
-        $valor_actual = $credito->valor;
-        $credito->valor = $valor_actual - $request->valor_abono;
-        $credito->valor_cuota = $valor_actual - $request->valor_abono;
+        $saldo = $credito->saldo;
+        $credito->saldo = $saldo - $request->valor_abono;
 
-
-        if($valor_actual >= $request->valor_abono){
+        if($request->valor_abono <= $saldo){
           Session::flash('mensaje','Abono realizado con exito.');
   
         }else{
@@ -279,12 +282,18 @@ class CreditoController extends Controller
           return redirect()->back();
         }
 
-        if($credito->valor==0){
+        if($credito->saldo==0){
             $credito->estado = 2;
         }
-
         $credito->save();
-        return redirect()->back();  // no analizamos bien el algoritmo paso jajja POR QUE   el valor del formulario no puede superarra al credito jajajjaj y si paso
+        //
+        $pago_credito = new PagoCredito;
+        $pago_credito->id_credito = $credito->id;
+        $pago_credito->valor_abono= $request->valor_abono;
+        $pago_credito->fecha_abono= $fecha;
+        $pago_credito->save();
+        
+        return redirect()->back(); 
     }
 
     /**

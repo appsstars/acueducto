@@ -5,7 +5,7 @@
     var id;
     var valor;
     function pagar(id){
-        var action = 'http://127.0.0.1:8000/app/credito/'+id;
+        var action = '{{url("/")}}/app/credito/'+id;//aca perri
         $('#pago-credito').attr('action',action);
         $('input[name=id_credito]').val(id);
         $('#form-create').modal('show');
@@ -49,45 +49,47 @@
 					<thead>
 
 						<tr>
-                            <td>Cod_Medidor</td>
+              <td>Cod_Medidor</td>
+              <td>Ref_credito</td>
 							<td>Nombre</td>
 							<td>Primer Apellido</td>
-                            <td>Segundo Apellido</td>
-                            <td>Documento</td>
-                            <td>Valor Credito</td>
-                            <td>No de Cuotas</td>
-                            <td>Fecha de pago</td>
+              <td>Segundo Apellido</td>
+              <td>Documento</td>
+              <td>Valor Credito</td>
+              <td>No de Cuotas</td>
+              <td style="background-color:#cede2c; color:black;">Saldo</td>
 							<td>Estado del Credito</td>
                             <td colspan="3">Opciones</td>
 
 						</tr>
 					</thead>
 					<tbody>
-                        @foreach ($credito as $credito)
-                        <tr>
+            @foreach ($credito as $credito)
+              <tr>
 
-                            <td>{{$credito->id_medidor}}</td>
-                            <td>{{$credito->nombre}}</td>
-							<td>{{$credito->primer_apellido}}</td>
-							<td>{{$credito->segundo_apellido}}</td>
-							<td>{{$credito->documento}}</td>
-                            <td>{{$credito->valor_cuota}}</td>
-                            <td>{{$credito->cuota}}</td>
-                            <td>{{$credito->fecha_pago}}</td>
-                            @if ($credito->estado == 1)
-                                <td>Activo</td>
-                            @else
-                                <td>Cancelado</td>
-                            @endif
-                            <td>
-                                <a href="#" class="btn btn-outline-success" onclick="pagar('{{$credito->id_credito}}')">ABONO</a>
-                            </td>
-                            <td>
-                                 <a href="#" class="btn btn-outline-primary" onclick="editar('{{$credito->id_credito}}','{{$credito->valor_cuota}}')">Editar</a>
-                            </td>
-                            <td>
-                                 <a href="#" class="btn btn-outline-danger" onclick="eliminar('{{$credito->id_credito}}')">Eliminar</a>
-                            </td>
+                <td>{{$credito->id_medidor}}</td>
+                <td>{{$credito->id_credito}}</td>
+                <td>{{$credito->nombre}}</td>
+                <td>{{$credito->primer_apellido}}</td>
+                <td>{{$credito->segundo_apellido}}</td>
+                <td>{{$credito->documento}}</td>
+                <td>{{$credito->valor}}</td>
+                <td>{{$credito->cuota}}</td>
+                <td style="background-color: #009688; color:black">{{$credito->saldo}}</td>
+                @if ($credito->estado == 1)
+                    <td>Activo</td>
+                @else
+                    <td>Cancelado</td>
+                @endif
+                <td>
+                    <a href="#" class="btn btn-outline-success" onclick="pagar('{{$credito->id_credito}}')">ABONO</a>
+                </td>
+                <td>
+                      <a href="#" class="btn btn-outline-primary" onclick="editar('{{$credito->id_credito}}','{{$credito->valor_cuota}}')">Editar</a>
+                </td>
+                <td>
+                      <a href="#" class="btn btn-outline-danger" onclick="eliminar('{{$credito->id_credito}}')">Eliminar</a>
+                </td>
                             
 
 						</tr>
